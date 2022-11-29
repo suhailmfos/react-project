@@ -6,7 +6,8 @@ export default class ViewEmployeeComponent extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            employee: {}
+            employee: {},
+            student: {}
         }
     }
     componentDidMount(){
