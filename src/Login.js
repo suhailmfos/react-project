@@ -5,15 +5,17 @@ function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [token, setToken] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/login", {
+            const response = await axios.post("http://localhost:8081/api/authenticate", {
                 username,
                 password,
             });
-            localStorage.setItem("token", response.data.token);
+            setToken(response.data);
+            localStorage.setItem("token", response.data);
             alert("Login successful!");
         } catch (err) {
             setError("Invalid username or password");
