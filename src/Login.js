@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const API_URL = "http://localhost:8080/api/auth/login";
+// const API_URL = "https://suhail.up.railway.app/api/auth/login";
+
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -10,7 +13,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:8081/api/auth/login", {
+            const response = await axios.post(API_URL, {
                 username,
                 password,
             });
