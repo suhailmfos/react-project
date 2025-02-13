@@ -10,13 +10,14 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:8081/api/authenticate", {
+            const response = await axios.post("http://localhost:8081/api/auth/login", {
                 username,
                 password,
             });
             setToken(response.data);
             localStorage.setItem("token", response.data);
-            console.log(token);
+            console.log("token value : " + token);
+            console.log("response " + response.data);
             alert("Login successfull with token: " + response.data + "\n" +
                 username + " \n" + password);
         } catch (err) {
