@@ -16,7 +16,9 @@ function Login() {
             });
             setToken(response.data);
             localStorage.setItem("token", response.data);
-            alert("Login successful!");
+            console.log(token);
+            alert("Login successfull with token: " + response.data + "\n" +
+                username + " \n" + password);
         } catch (err) {
             setError("Invalid username or password");
         }
