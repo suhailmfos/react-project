@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-const API_URL = "http://localhost:8080";
-// const API_URL = "https://suhail.up.railway.app";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Home = ({ setIsAuthenticated }) => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
+    const goToRegister = () => {
+        navigate("/register");
+    };
 
     useEffect(() => {
         axios.get(API_URL + "/api/v1/current-user", { withCredentials: true })
@@ -41,6 +43,12 @@ const Home = ({ setIsAuthenticated }) => {
                     className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
                 >
                     Logout
+                </button>
+                <button
+                    onClick={goToRegister}
+                    className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition mt-4"
+                >
+                    Register
                 </button>
             </div>
         </div>

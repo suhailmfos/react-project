@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:8080";
-// const API_URL = "https://suhail.up.railway.app";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Login({ setIsAuthenticated }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+
+    const goToRegister = () => {
+        navigate("/register");
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -80,7 +83,7 @@ function Login({ setIsAuthenticated }) {
                     </form>
                     <div className="flex justify-between mt-4">
                         <button
-                            onClick={() => navigate("/register")}
+                            onClick={goToRegister}
                             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-1/2 mr-2"
                         >
                             Register
