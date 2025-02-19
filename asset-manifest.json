@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/suhail-service/static/css/main.e6c13ad2.css",
-    "main.js": "/suhail-service/static/js/main.12a53c29.js",
+    "main.js": "/suhail-service/static/js/main.d93895cc.js",
     "static/js/488.312cbf80.chunk.js": "/suhail-service/static/js/488.312cbf80.chunk.js",
     "index.html": "/suhail-service/index.html",
     "main.e6c13ad2.css.map": "/suhail-service/static/css/main.e6c13ad2.css.map",
-    "main.12a53c29.js.map": "/suhail-service/static/js/main.12a53c29.js.map",
+    "main.d93895cc.js.map": "/suhail-service/static/js/main.d93895cc.js.map",
     "488.312cbf80.chunk.js.map": "/suhail-service/static/js/488.312cbf80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.12a53c29.js"
+    "static/js/main.d93895cc.js"
   ]
 }
