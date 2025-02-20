@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom"
 import Login from "./Login";
 import Home from "./Home";
 import Register from "./Register";
-import axios from "axios";
 import api from "./api";
 
 
@@ -22,7 +21,7 @@ function App() {
                 setIsAuthenticated(false);
             }
         };
-        
+
         fetchUser();
     }, []);
 
